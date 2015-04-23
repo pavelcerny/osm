@@ -4,13 +4,12 @@ import time
 
 __author__ = 'pavel'
 
- # pointA = (41.49008, -71.312796)
- # pointB = (41.499498, -81.695391)
+ # point = (latitude, longitude)
 def getDistance(pointA, pointB):
     return great_circle(pointA,pointB).kilometers
 
 def printElapsedTime(start):
-    end = time.clock()
+    end = time.time()
     print 'time elapsed', (end - start)/60, 'minutes'
 
 
@@ -54,7 +53,7 @@ class DistanceCounter(object):
 KEY='waterway'
 VALUE='river'
 
-start =time.clock()
+start =time.time()
 counter = DistanceCounter(KEY,VALUE)
 print 'initializing for', KEY, '=', VALUE
 printElapsedTime(start)
